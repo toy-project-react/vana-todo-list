@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TodoContainer from './containers/TodoContainer';
+import Todo from './components/Todo';
 import './App.css';
 
 class App extends Component {
@@ -10,13 +10,11 @@ class App extends Component {
           <h1>Vana's Todo List</h1>
         </header>
         <section>
-          <TodoContainer></TodoContainer>
+          <Todo />
         </section>
-        <footer>
-          ⓒ 2019. Vana
-        </footer>
+        <footer>ⓒ 2019. Vana</footer>
       </div>
-    )
+    );
   }
 }
 

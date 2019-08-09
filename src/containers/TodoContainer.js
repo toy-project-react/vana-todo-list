@@ -5,7 +5,6 @@ import Todo from '../components/Todo';
 import * as todoActions from '../store/modules/todo';
 
 class TodoContainer extends Component {
-
   handleChange = e => {
     const { TodoActions } = this.props;
     TodoActions.changeInput(e.target.value);
@@ -16,17 +15,17 @@ class TodoContainer extends Component {
     const { TodoActions, text } = this.props;
     TodoActions.addTodo(text);
     TodoActions.changeInput('');
-  }
+  };
 
   handleComplete = id => {
     const { TodoActions } = this.props;
     TodoActions.complete(id);
-  }
+  };
 
   handleRemove = id => {
     const { TodoActions } = this.props;
     TodoActions.removeTodo(id);
-  }
+  };
 
   render() {
     const { text, list } = this.props;
@@ -39,8 +38,7 @@ class TodoContainer extends Component {
           onSubmit={this.handleSubmit}
           onComplete={this.handleComplete}
           onRemove={this.handleRemove}
-        >
-        </Todo>
+        />
       </div>
     );
   }
@@ -53,7 +51,7 @@ const mapStateToProps = ({ todo }) => ({
 
 const mapDispatchToProps = dispatch => ({
   TodoActions: bindActionCreators(todoActions, dispatch)
-})
+});
 
 export default connect(
   mapStateToProps,
